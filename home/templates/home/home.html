@@ -1,0 +1,43 @@
+{% include 'main.html' %} {% block content %}
+<h1>Class Routine</h1>
+<div class="container">
+  <form action="" method="get">
+    <div class="form-input">
+      <label for="level">Level:</label>
+      <input type="text" id="level" name="level" />
+    </div>
+    &nbsp;&nbsp;
+    <div class="form-input">
+      <label for="semester">Semester:</label>
+      <input type="text" id="semester" name="semester" />
+    </div>
+    &nbsp;&nbsp;
+    <div class="form-input">
+      <label for="day">Day:</label>
+      <input type="text" id="day" name="day" />
+    </div>
+    <br />
+    <input type="submit" value="Search" />
+  </form>
+</div>
+<br />
+{% if subjects%}
+<table>
+  <tr>
+    <th>Subject</th>
+    <th>Teacher</th>
+    <th>Group</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+  </tr>
+  {% for subject in subjects %}
+  <tr>
+    <td>{{subject.subject}}</td>
+    <td>{{subject.teacher}}</td>
+    <td>{{subject.group}}</td>
+    <td>{{subject.start_time}}</td>
+    <td>{{subject.end_time}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %} {% endblock content %}

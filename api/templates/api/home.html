@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TCIOE Routine API</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        margin: 10px 0;
+      }
+
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        font-family: Consolas, monospace;
+      }
+
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        overflow-x: auto;
+      }
+      .comment {
+        font-style: italic;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Class Routine API</h1>
+    <p>
+      Welcome to the Class Routine API! This API allows you to access class
+      routine information for Thapathali Campus, which includes the following
+      features:
+    </p>
+    <ul>
+      <li>Endpoint to retrieve the class routine for a specific class</li>
+      <li>Endpoint to retrieve the class routine for a specific teacher</li>
+    </ul>
+    <h2>API Endpoints</h2>
+    <p>The Class Routine API has the following endpoints:</p>
+    <ul>
+      <li>
+        <code>GET /api/routine/class</code> - retrieves the class routine for
+        the specified class for specified day according to the query parameters.
+      </li>
+      {% comment %}
+      <li>
+        <code>GET /api/student/{studentId}/routine</code> - retrieves the class
+        routine for the specified student
+      </li>
+      {% endcomment %}
+      <li>
+        <code>GET /api/routine/teacher</code> - retrieves the class routine for
+        the specified teacher for whole week according to the query parameters.
+      </li>
+    </ul>
+    <h2>API Usage</h2>
+    <p>
+      To use the Class Routine API, you will need to send an HTTP GET request to
+      one of the endpoints listed above. You may include query parameters as
+      needed to specify the exact information you want to retrieve. For example:
+    </p>
+    <pre>
+<code>GET /api/routine/class?level=bei&day=thursday&semester=II</code>
+</pre>
+    <p>
+      This request will retrieve the class routine for BEI semester II for
+      Thursday. The API will return the data in JSON format. Please refer to the
+      API documentation for more information on the available query parameters
+      and the structure of the returned data.
+    </p>
+    <pre>
+<code>GET /api/routine/teacher?level=bei&teacher=ABC&semester=II&day=thursday</code>
+</pre>
+    <pre>
+<code>GET /api/routine/teacher?level=bei&teacher=ABC&semester=II</code>
+</pre>
+    <p>
+      This request will retrieve the class routine for BEI semester II for whole
+      week or thursday respectively of a specific teacher. The API will return
+      the data in JSON format.
+    </p>
+  </body>
+</html>
