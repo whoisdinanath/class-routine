@@ -3,4 +3,6 @@ api/__pycache__
 api/migrations
 home/__pycache__
 home/migrations
+routine/__pycache__
+rotuine/migrations
 env
