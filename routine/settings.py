@@ -14,6 +14,7 @@ from pathlib import Path
 from decouple import config
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +28,10 @@ SECRET_KEY = config('SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = ['routiney.azurewebsites.net', 'localhost', '127.0.0.1']
 
 # DISCORD_BOT_APP = 'discord_bot.main'
 # DISCORD_TOKEN="MTExMTMzMjgwNDc5NDUzMTg3MA.GQh1-8.VfRMEbTc8YB6eV-Od2dGuypa6ZTdXCai6mdAKM"

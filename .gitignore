@@ -1,3 +1,4 @@
+.env
 api/__pycache__
 api/migrations
 home/__pycache__
