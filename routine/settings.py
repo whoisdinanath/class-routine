@@ -155,7 +155,7 @@ if not DEBUG:
         'handlers': {
             'logfile': {
                 'class': 'logging.handlers.WatchedFileHandler',
-                'filename': 'D:\home\site\wwwroot\myapp.log'
+                'filename': '/home/site/wwwroot/error.log'
             }
         },
         'loggers': {
