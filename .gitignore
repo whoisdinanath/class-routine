@@ -5,4 +5,3 @@ home/__pycache__
 home/migrations
 routine/__pycache__
 routine/migrations
-env

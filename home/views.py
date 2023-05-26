@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from api.models import Subject, Level
+from home.models import Subject, Level
 from django.db.models import Q
 from datetime import date
 # Create your views here.
