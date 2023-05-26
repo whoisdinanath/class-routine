@@ -128,90 +128,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-# if not DEBUG:
-#     DATABASES = {
-#         "default": {
-#             "ENGINE": "mssql",
-#             "NAME": config("DBNAME"),
-#             "USER": config("DBUSER"),
-#             "PASSWORD": config("DBPASS"),
-#             "HOST": config("DBHOST"),
-#             "PORT": "1433",
-#             "OPTIONS": {"driver": "ODBC Driver 17 for SQL Server",
-#                         },
-#         },
-#     }
-#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-#     LOGGING = {
-#         'version': 1,
-#         'disable_existing_loggers': False,
-#         'filters': {
-#             'require_debug_false': {
-#                 '()': 'django.utils.log.RequireDebugFalse'
-#             }
-#         },
-#         'handlers': {
-#             'logfile': {
-#                 'class': 'logging.handlers.WatchedFileHandler',
-#                 'filename': '/home/site/wwwroot/error.log'
-#             }
-#         },
-#         'loggers': {
-#             'django': {
-#                 'handlers': ['logfile'],
-#                 'level': 'ERROR',
-#                 'propagate': False,
-#             }
-#         }
-#     }
-
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': BASE_DIR / 'db.sqlite3',
-#         }
-#     }
-
 if not DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': '/home/site/wwwroot/db.sqlite3',
-        }
-    }
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-    LOGGING = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'filters': {
-            'require_debug_false': {
-                '()': 'django.utils.log.RequireDebugFalse'
-            }
-        },
-        'handlers': {
-            'logfile': {
-                'class': 'logging.handlers.WatchedFileHandler',
-                'filename': '/home/site/wwwroot/error.log'
-            }
-        },
-        'loggers': {
-            'django': {
-                'handlers': ['logfile'],
-                'level': 'ERROR',
-                'propagate': False,
-            }
-        }
-    }
 
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
