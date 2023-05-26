@@ -31,8 +31,7 @@ DEBUG = False
 if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = ["routiney.azurewebsites.net", "localhost",
-                     "127.0.0.1", "https://routiney.azurewebsites.net/"]
+    ALLOWED_HOSTS = ["*"]
 
 # DISCORD_BOT_APP = 'discord_bot.main'
 # DISCORD_TOKEN="MTExMTMzMjgwNDc5NDUzMTg3MA.GQh1-8.VfRMEbTc8YB6eV-Od2dGuypa6ZTdXCai6mdAKM"
@@ -103,8 +102,6 @@ if not DEBUG:
     }
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-    CSRF_TRUSTED_ORIGINS = [
-        'https://*.api-acog.azurewebsites.net/',  'http://*.127.0.0.1']
 
 else:
     DATABASES = {
