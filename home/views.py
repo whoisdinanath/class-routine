@@ -24,9 +24,9 @@ def home(request):
             context = {'subjects': subjects,
                        'level': level, 'day': day, 'sem': sem}
 
-        routine_today = Subject.objects.filter(
-            Q(level__department="BEI") & Q(day__day=day_today) & Q(level__semester="II")).order_by('start_time')
-        context['routine_today_subjects'] = routine_today
+        # routine_today = Subject.objects.filter(
+        #     Q(level__department="BEI") & Q(day__day=day_today) & Q(level__semester="II")).order_by('start_time')
+        # context['routine_today_subjects'] = routine_today
         context['levels'] = levels
         context['days'] = days
 
